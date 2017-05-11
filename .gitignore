@@ -1,0 +1,13 @@
+/**/node_modules
+/**/bower_components
+/**/app/libs
+/**/app/fonts
+/**/app/css
+/**/dist
+/**/.tmp
+.git
+pwd.txt
+
+
+/**/*.psd
+/**/Thumbs.db
