@@ -7,8 +7,8 @@ module.exports = {
         console.log(req.body);
         User.findOne({ email: req.body.email }, function (err, existingUser) {
 
-            if(existingUser){
-                return res.status(409).send({message: 'Email is alredy registered'});
+            if (existingUser) {
+                return res.status(409).send({ message: 'Email is alredy registered' });
             }
             var user = new User(req.body);
             user.save(function (err, result) {
@@ -17,13 +17,13 @@ module.exports = {
                         message: err.message
                     });
                 }
-                res.status(200).send({token: createToken(result)});
+                res.status(200).send({ token: createToken(result) });
             })
         });
     }
 }
 
-function createToken (user){
+function createToken(user) {
     var payload = {
         sub: user._id,
         iat: moment().unix(),
